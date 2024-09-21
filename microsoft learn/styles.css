@@ -1,0 +1,18 @@
+@media screen and (min-width: 1088px) {
+  .modular-content-container {
+    max-width: 1300px !important;
+    width: 100% !important;
+  }
+  .columns.is-mobile > .column.is-half {
+    width: 70% !important;
+  }
+}
+.collapsed {
+  display: none;
+}
+.toggle-button {
+  margin: 0 !important;
+  margin-top: 20px !important;
+  padding: 5px 10px !important;
+  border-radius: 5px !important;
+}

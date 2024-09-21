@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Select language or make a search</title>
+    <style>
+      .flag-button {
+        border: none;
+        background: none;
+        cursor: pointer;
+      }
+      .flag-button img {
+        border: 2px solid black;
+        width: 64px;
+        height: auto;
+      }
+      #ru-ru {
+        margin-top: 5px;
+      }
+      #search-container {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        border: 2px solid black;
+        transition: border 0.3s ease;
+        border-radius: 30px;
+      }
+      #search-input {
+        border-radius: 30px;
+        width: 200px;
+        padding: 5px;
+        border: none;
+        outline: none;
+      }
+      #search-button {
+        visibility: hidden;
+        pointer-events: auto;
+        margin-left: 5px;
+        margin-right: 3px;
+        cursor: pointer;
+      }
+      #search-input:focus + #search-container {
+        border-color: black;
+        background-color: aqua;
+      }
+      #search-input:focus ~ #search-container {
+        border-color: black;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button id="en-us" class="flag-button"><img src="icons/us.svg" alt="English" /></button>
+      <button id="ru-ru" class="flag-button"><img src="icons/ru.png" alt="Russian" /></button>
+    </div>
+
+    <div id="search-container">
+      <input id="search-input" type="text" placeholder="Enter search query" />
+      <div id="search-button"><img src="icons/search.svg" alt="" /></div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
