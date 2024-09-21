@@ -9,12 +9,14 @@ document.getElementById('ru-ru').addEventListener('click', () => {
 function changeLanguage(language) {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     let url = new URL(tabs[0].url);
-    let pathSegments = url.pathname.split('/');
-    if (pathSegments.length > 1) {
-      pathSegments[1] = language;
-      url.pathname = pathSegments.join('/');
-      chrome.tabs.update(tabs[0].id, { url: url.toString() });
-      window.close();
+    if (url.hostname.includes('.microsoft.com')) {
+      let pathSegments = url.pathname.split('/');
+      if (pathSegments.length > 1) {
+        pathSegments[1] = language;
+        url.pathname = pathSegments.join('/');
+        chrome.tabs.update(tabs[0].id, { url: url.toString() });
+        window.close();
+      }
     }
   });
 }
