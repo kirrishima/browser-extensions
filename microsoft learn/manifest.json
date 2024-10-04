@@ -5,8 +5,13 @@
   "description": "Custom CSS to Microsoft Learn pages & search in microsoft",
   "permissions": [
     "activeTab",
-    "scripting"
+    "scripting",
+    "contextMenus"
   ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
   "content_scripts": [
     {
       "matches": ["https://learn.microsoft.com/*"],
